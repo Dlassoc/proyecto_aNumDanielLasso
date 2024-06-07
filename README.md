@@ -1,7 +1,7 @@
-# 🧮 Calculadora y Graficadora de Métodos Numéricos 📊
+## Calculadora y Graficadora ANum 📊
 
 ## Descripción
-Esta aplicación de escritorio desarrollada en Python con Tkinter proporciona una interfaz amigable para ingresar funciones matemáticas y calcular su solución utilizando una variedad de métodos numéricos. Además, permite graficar las funciones y sus soluciones utilizando matplotlib.
+Esta aplicación de escritorio desarrollada en Python con Tkinter proporciona una interfaz amigable para ingresar funciones matemáticas y calcular su solución utilizando los metodos numericos vistos en clase. Además, permite graficar las funciones y sus soluciones utilizando matplotlib.
 
 ## Métodos Numéricos Disponibles
 - Taylor
@@ -22,10 +22,9 @@ Esta aplicación de escritorio desarrollada en Python con Tkinter proporciona un
 - **Visualización de Resultados:** Los resultados de los cálculos se presentan de manera clara y comprensible para el usuario.
 
 ## Requisitos de Instalación
-- Python 3.x
+- Python 3.3 para arriba
 - Tkinter (generalmente incluido en la instalación estándar de Python)
 - Matplotlib
-- Otros paquetes necesarios (consultar requirements.txt)
 
 ## Instalación
 1. Clona este repositorio en tu máquina local.
