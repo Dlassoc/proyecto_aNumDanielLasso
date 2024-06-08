@@ -18,7 +18,7 @@ def home_page():
     for widget in main_frame.winfo_children():
         widget.destroy()
     
-    home_frame = tk.Frame(main_frame, bg="light cyan")
+    home_frame = tk.Frame(main_frame, bg="#E1F140")
     home_frame.pack(expand=True, fill=tk.BOTH, pady=20)
     
     lb = tk.Label(home_frame, text='Bienvenid@', font=('Great Vibes', 38), bg='Light cyan', fg='red')

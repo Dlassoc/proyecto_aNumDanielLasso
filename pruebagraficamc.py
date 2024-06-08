@@ -20,23 +20,27 @@ def home_page():
     for widget in main_frame.winfo_children():
         widget.destroy()
     
-    home_frame = tk.Frame(main_frame, bg="light cyan")
+    home_frame = tk.Frame(main_frame, bg="green")
     home_frame.pack(expand=True, fill=tk.BOTH, pady=20)
     
-    lb = tk.Label(home_frame, text='Bienvenid@', font=('Great Vibes', 38), bg='Light cyan', fg='red')
+    lb = tk.Label(home_frame, text='Bienvenid@', font=('Great Vibes', 38), bg='green', fg='white')
     lb.pack(pady=80)
     
     msg = '''
-    En esta calculadora, podrás resolver ecuaciones de los siguientes tipos:
-    - Series de Taylor
-    - Ceros de funciones
-    - Interpolación
-    - Ecuaciones diferenciales
+    Proyecto final Daniel Lasso Analisis numerico,
+    en esta calculadora podrá encontrar diferentes
+    métodos numéricos para resolver problemas de
+    interpolación, cálculo de ceros de funciones,
+    ecuaciones diferenciales y aproximación de
+    funciones mediante el método de Taylor.
+    Este programa está hecho para uso de codigo
+    abierto y educativo. 
+
     '''
-    lb1 = tk.Label(home_frame, text=msg, font=('Dancing Script', 14), bg='Light cyan')
+    lb1 = tk.Label(home_frame, text=msg, font=('Dancing Script', 14), bg='green', fg = "white")
     lb1.pack(pady=10)
 
-# Función para insertar operadores predefinidos en los campos de entrada
+# Función para insertar operadores pwhiteefinidos en los campos de entrada
 def insertar_operador(entry_widget, operador):
     funciones = {'e': 'exp()', 'sin': 'sin()', 'cos': 'cos()'}
     contenido_actual = entry_widget.get()
@@ -64,62 +68,62 @@ def taylor_page():
 
     global entry_funcion, entry_point, entry_grade, entry_solution_taylor
     
-    taylor_frame = tk.Frame(main_frame, bg="light cyan")
+    taylor_frame = tk.Frame(main_frame, bg="green")
     taylor_frame.pack(expand=True, fill=tk.BOTH, pady=20)
     
-    lb = tk.Label(taylor_frame, text='Método de Taylor', font=('Bold', 40), bg='Light cyan')
+    lb = tk.Label(taylor_frame, text='Método de Taylor', font=('Bold', 40), bg='green', fg='white')
     lb.pack(pady=10)
     
-    lb1 = tk.Label(taylor_frame, text='Aproximación de un polinomio de Taylor.', font=('Arial', 12), bg='Light cyan')
+    lb1 = tk.Label(taylor_frame, text='Aproximación de un polinomio de Taylor.', font=('Arial', 12), bg='green')
     lb1.pack(pady=10)
 
-    entry_funcion_frame = tk.Frame(taylor_frame, bg="light cyan")
-    lb_insert_funcion = tk.Label(entry_funcion_frame, text='Inserte la función:', font=('Arial', 12), bg='light cyan')
+    entry_funcion_frame = tk.Frame(taylor_frame, bg="green")
+    lb_insert_funcion = tk.Label(entry_funcion_frame, text='Inserte la función:', font=('Arial', 12), bg='green')
     lb_insert_funcion.pack(side=tk.LEFT, padx=5)
     entry_funcion = tk.Entry(entry_funcion_frame, font=('Arial', 12), width=60)
     entry_funcion.pack(side=tk.LEFT)
     entry_funcion_frame.pack(pady=5)
 
     # Botones para funciones comunes
-    buttons_frame = tk.Frame(taylor_frame, bg="light cyan")
-    exp_btn = tk.Button(buttons_frame, text="e", font=('Bold', 12), fg='blue4', bd=5, bg='#c3c3c3', command=lambda: insertar_operador(entry_funcion, 'e'))
+    buttons_frame = tk.Frame(taylor_frame, bg="green")
+    exp_btn = tk.Button(buttons_frame, text="e", font=('Bold', 12), fg='green', bd=5, bg='#c3c3c3', command=lambda: insertar_operador(entry_funcion, 'e'))
     exp_btn.pack(side=tk.LEFT, padx=5)
-    sin_btn = tk.Button(buttons_frame, text="Sin", font=('Bold', 12), fg='blue4', bd=5, bg='#c3c3c3', command=lambda: insertar_operador(entry_funcion, 'sin'))
+    sin_btn = tk.Button(buttons_frame, text="Sin", font=('Bold', 12), fg='green', bd=5, bg='#c3c3c3', command=lambda: insertar_operador(entry_funcion, 'sin'))
     sin_btn.pack(side=tk.LEFT, padx=5)
-    cos_btn = tk.Button(buttons_frame, text="Cos", font=('Bold', 12), fg='blue4', bd=5, bg='#c3c3c3', command=lambda: insertar_operador(entry_funcion, 'cos'))
+    cos_btn = tk.Button(buttons_frame, text="Cos", font=('Bold', 12), fg='green', bd=5, bg='#c3c3c3', command=lambda: insertar_operador(entry_funcion, 'cos'))
     cos_btn.pack(side=tk.LEFT, padx=5)
     buttons_frame.pack(pady=5)
 
-    entry_grade_frame = tk.Frame(taylor_frame, bg="light cyan")
-    lb_insert_grade = tk.Label(entry_grade_frame, text='Inserte el grado:', font=('Arial', 12), bg='light cyan')
+    entry_grade_frame = tk.Frame(taylor_frame, bg="green")
+    lb_insert_grade = tk.Label(entry_grade_frame, text='Inserte el grado:', font=('Arial', 12), bg='green')
     lb_insert_grade.pack(side=tk.LEFT, padx=5)
     entry_grade = tk.Entry(entry_grade_frame, font=('Arial', 12), width=30)
     entry_grade.pack(side=tk.LEFT)
     entry_grade_frame.pack(pady=5)
 
-    entry_point_frame = tk.Frame(taylor_frame, bg="light cyan")
-    lb_insert_point = tk.Label(entry_point_frame, text='Inserte el punto:', font=('Arial', 12), bg='light cyan')
+    entry_point_frame = tk.Frame(taylor_frame, bg="green")
+    lb_insert_point = tk.Label(entry_point_frame, text='Inserte el punto:', font=('Arial', 12), bg='green')
     lb_insert_point.pack(side=tk.LEFT, padx=5)
     entry_point = tk.Entry(entry_point_frame, font=('Arial', 12), width=30)
     entry_point.pack(side=tk.LEFT)
     entry_point_frame.pack(pady=5)
 
-    execute_btn = tk.Button(taylor_frame, text="Ejecutar", font=('Bold', 15), fg='red', bd=5, bg='#c3c3c3', command=obtener_datos_taylor)
+    execute_btn = tk.Button(taylor_frame, text="Ejecutar", font=('Bold', 15), fg='white', bd=5, bg='#c3c3c3', command=obtener_datos_taylor)
     execute_btn.pack(pady=10)
 
-    solution_taylor_frame = tk.Frame(taylor_frame, bg="light cyan")
-    lb_solution = tk.Label(solution_taylor_frame, text='Solución', font=('Bold', 30), bg='Light cyan', fg='red')
+    solution_taylor_frame = tk.Frame(taylor_frame, bg="green")
+    lb_solution = tk.Label(solution_taylor_frame, text='Solución', font=('Bold', 30), bg='green', fg='white')
     lb_solution.pack()
-    lb_enunciado_solution = tk.Label(solution_taylor_frame, text='El polinomio aproximado a la función dada es:', font=('Arial', 12), bg='Light cyan')
+    lb_enunciado_solution = tk.Label(solution_taylor_frame, text='El polinomio aproximado a la función dada es:', font=('Arial', 12), bg='green')
     lb_enunciado_solution.pack(pady=10)
-    entry_solution_frame = tk.Frame(solution_taylor_frame, bg="light cyan")
+    entry_solution_frame = tk.Frame(solution_taylor_frame, bg="green")
     entry_solution_taylor = tk.Entry(entry_solution_frame, font=('Arial', 12), width=60)
     entry_solution_taylor.pack(side=tk.LEFT)
     entry_solution_frame.pack(pady=5)
     solution_taylor_frame.pack(pady=20)
 
     # Botón para ver la gráfica
-    grafica_btn = tk.Button(solution_taylor_frame, text="Ver gráfica", font=('Bold', 15), fg='red', bd=5, bg='#c3c3c3', command=lambda: grafica_taylor_page(entry_solution_taylor.get()))
+    grafica_btn = tk.Button(solution_taylor_frame, text="Ver gráfica", font=('Bold', 15), fg='white', bd=5, bg='#c3c3c3', command=lambda: grafica_taylor_page(entry_solution_taylor.get()))
     grafica_btn.pack(pady=10)
 
 # Función para mostrar la gráfica del polinomio de Taylor
@@ -128,10 +132,10 @@ def grafica_taylor_page(funcion):
         for widget in main_frame.winfo_children():
             widget.destroy()
         
-        grafica_taylor_frame = tk.Frame(main_frame, bg="light cyan")
+        grafica_taylor_frame = tk.Frame(main_frame, bg="green")
         grafica_taylor_frame.pack(expand=True, fill=tk.BOTH, pady=20)
 
-        lb = tk.Label(grafica_taylor_frame, text='Gráfica', font=('Bold', 40), bg='Light cyan')
+        lb = tk.Label(grafica_taylor_frame, text='Gráfica', font=('Bold', 40), bg='green')
         lb.pack(pady=10)
 
         # Crear una figura de Matplotlib
@@ -167,6 +171,7 @@ def obtener_datos_ceros(metodo):
         punto_x1 = float(entry_x1.get())
         tol = float(entry_tol.get())
         f = lambda x: eval(str(y))
+        solution_ceros_frame.pack(pady=20)
         raiz = metodo(f, punto_x0, punto_x1, tol)
         entry_solution_ceros.delete(0, tk.END)
         entry_solution_ceros.insert(tk.END, raiz)
@@ -178,66 +183,70 @@ def ceros_page():
     for widget in main_frame.winfo_children():
         widget.destroy()
 
-    global entry_funcion_ceros, entry_x0, entry_x1, entry_tol, entry_solution_ceros
+    global entry_funcion_ceros, entry_x0, entry_x1, entry_tol, entry_solution_ceros, solution_ceros_frame
     
-    ceros_frame = tk.Frame(main_frame, bg="light cyan")
+    ceros_frame = tk.Frame(main_frame, bg="green")
     ceros_frame.pack(expand=True, fill=tk.BOTH, pady=20)
     
-    lb = tk.Label(ceros_frame, text='Ceros de Funciones', font=('Bold', 40), bg='Light cyan')
+    lb = tk.Label(ceros_frame, text='Ceros de Funciones', font=('Bold', 40), bg='green', fg='white')
     lb.pack(pady=10)
     
-    lb1 = tk.Label(ceros_frame, text='Búsqueda de ceros de funciones utilizando diferentes métodos numéricos.', font=('Arial', 12), bg='Light cyan')
+    lb1 = tk.Label(ceros_frame, text='Búsqueda de ceros de funciones utilizando diferentes métodos numéricos.', font=('Arial', 12), bg='green', fg='white' )
     lb1.pack(pady=10)
     
-    entry_funcion_ceros_frame = tk.Frame(ceros_frame, bg="light cyan")
-    lb_insert_funcion = tk.Label(entry_funcion_ceros_frame, text='Inserte la función:', font=('Arial', 12), bg='light cyan')
+    entry_funcion_ceros_frame = tk.Frame(ceros_frame, bg="green")
+    lb_insert_funcion = tk.Label(entry_funcion_ceros_frame, text='Inserte la función:', font=('Arial', 12), bg='green')
     lb_insert_funcion.pack(side=tk.LEFT, padx=5)
     entry_funcion_ceros = tk.Entry(entry_funcion_ceros_frame, font=('Arial', 12), width=60)
     entry_funcion_ceros.pack(side=tk.LEFT)
     entry_funcion_ceros_frame.pack(pady=5)
 
-    entry_x0_frame = tk.Frame(ceros_frame, bg="light cyan")
-    lb_insert_x0 = tk.Label(entry_x0_frame, text='Inserte el valor de x0:', font=('Arial', 12), bg='light cyan')
+    entry_x0_frame = tk.Frame(ceros_frame, bg="green")
+    lb_insert_x0 = tk.Label(entry_x0_frame, text='Inserte el valor de x0:', font=('Arial', 12), bg='green')
     lb_insert_x0.pack(side=tk.LEFT, padx=5)
     entry_x0 = tk.Entry(entry_x0_frame, font=('Arial', 12), width=30)
     entry_x0.pack(side=tk.LEFT)
     entry_x0_frame.pack(pady=5)
 
-    entry_x1_frame = tk.Frame(ceros_frame, bg="light cyan")
-    lb_insert_x1 = tk.Label(entry_x1_frame, text='Inserte el valor de x1:', font=('Arial', 12), bg='light cyan')
+    entry_x1_frame = tk.Frame(ceros_frame, bg="green")
+    lb_insert_x1 = tk.Label(entry_x1_frame, text='Inserte el valor de x1:', font=('Arial', 12), bg='green')
     lb_insert_x1.pack(side=tk.LEFT, padx=5)
     entry_x1 = tk.Entry(entry_x1_frame, font=('Arial', 12), width=30)
     entry_x1.pack(side=tk.LEFT)
     entry_x1_frame.pack(pady=5)
 
-    entry_tol_frame = tk.Frame(ceros_frame, bg="light cyan")
-    lb_insert_tol = tk.Label(entry_tol_frame, text='Inserte la tolerancia:', font=('Arial', 12), bg='light cyan')
+    entry_tol_frame = tk.Frame(ceros_frame, bg="green")
+    lb_insert_tol = tk.Label(entry_tol_frame, text='Inserte la tolerancia:', font=('Arial', 12), bg='green')
     lb_insert_tol.pack(side=tk.LEFT, padx=5)
     entry_tol = tk.Entry(entry_tol_frame, font=('Arial', 12), width=30)
     entry_tol.pack(side=tk.LEFT)
     entry_tol_frame.pack(pady=5)
 
-    methods_frame = tk.Frame(ceros_frame, bg="light cyan")
-    bis_btn = tk.Button(methods_frame, text="Bisección", font=('Bold', 12), fg='blue4', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_ceros(Biseccion))
+    methods_frame = tk.Frame(ceros_frame, bg="green")
+    bis_btn = tk.Button(methods_frame, text="Bisección", font=('Bold', 12), fg='green', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_ceros(Biseccion))
     bis_btn.pack(side=tk.LEFT, padx=5)
-    falsa_btn = tk.Button(methods_frame, text="Posición Falsa", font=('Bold', 12), fg='blue4', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_ceros(Pos_falsa))
+    falsa_btn = tk.Button(methods_frame, text="Posición Falsa", font=('Bold', 12), fg='green', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_ceros(Pos_falsa))
     falsa_btn.pack(side=tk.LEFT, padx=5)
-    newton_btn = tk.Button(methods_frame, text="Newton", font=('Bold', 12), fg='blue4', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_ceros(Newton))
+    newton_btn = tk.Button(methods_frame, text="Newton", font=('Bold', 12), fg='green', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_ceros(Newton))
     newton_btn.pack(side=tk.LEFT, padx=5)
-    sec_btn = tk.Button(methods_frame, text="Secante", font=('Bold', 12), fg='blue4', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_ceros(Secante))
+    sec_btn = tk.Button(methods_frame, text="Secante", font=('Bold', 12), fg='green', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_ceros(Secante))
     sec_btn.pack(side=tk.LEFT, padx=5)
     methods_frame.pack(pady=10)
 
-    solution_ceros_frame = tk.Frame(ceros_frame, bg="light cyan")
-    lb_solution = tk.Label(solution_ceros_frame, text='Solución', font=('Bold', 30), bg='Light cyan', fg='red')
+    # Crear la sección de soluciones pero no mostrarla inicialmente
+    solution_ceros_frame = tk.Frame(ceros_frame, bg="green")
+    lb_solution = tk.Label(solution_ceros_frame, text='Solución', font=('Bold', 30), bg='green', fg='white')
     lb_solution.pack()
-    lb_enunciado_solution = tk.Label(solution_ceros_frame, text='La raíz aproximada de la función dada es:', font=('Arial', 12), bg='Light cyan')
+    lb_enunciado_solution = tk.Label(solution_ceros_frame, text='La raíz aproximada de la función dada es:', font=('Arial', 12), bg='green')
     lb_enunciado_solution.pack(pady=10)
-    entry_solution_frame = tk.Frame(solution_ceros_frame, bg='light cyan')
+    entry_solution_frame = tk.Frame(solution_ceros_frame, bg='green')
     entry_solution_ceros = tk.Entry(entry_solution_frame, font=('Arial', 12), width=60)
     entry_solution_ceros.pack(side=tk.LEFT)
     entry_solution_frame.pack(pady=5)
-    solution_ceros_frame.pack(pady=20)
+
+    # Inicialmente no mostrar el frame de soluciones
+    solution_ceros_frame.pack_forget()
+
 
 # Función para obtener datos para interpolación
 def obtener_datos_interpolacion(metodo):
@@ -274,59 +283,59 @@ def interpolacion_page():
 
     global entry_x_values, entry_y_values, entry_valor_interpolar, entry_solution_interpolacion, entry_ecuacion_minimos_cuadrados, solution_interpolacion_frame
     
-    interpolacion_frame = tk.Frame(main_frame, bg="light cyan")
+    interpolacion_frame = tk.Frame(main_frame, bg="green")
     interpolacion_frame.pack(expand=True, fill=tk.BOTH, pady=20)
     
-    lb = tk.Label(interpolacion_frame, text='Interpolación', font=('Bold', 40), bg='Light cyan')
+    lb = tk.Label(interpolacion_frame, text='Interpolación', font=('Bold', 40), bg='green', fg='white')
     lb.pack(pady=10)
     
-    lb1 = tk.Label(interpolacion_frame, text='Interpolación de datos utilizando diferentes métodos numéricos.', font=('Arial', 12), bg='Light cyan')
+    lb1 = tk.Label(interpolacion_frame, text='Interpolación de datos utilizando diferentes métodos numéricos.', font=('Arial', 12), bg='green', fg='white')
     lb1.pack(pady=10)
     
-    entry_x_values_frame = tk.Frame(interpolacion_frame, bg="light cyan")
-    lb_insert_x_values = tk.Label(entry_x_values_frame, text='Inserte los valores de X (separados por comas):', font=('Arial', 12), bg='light cyan')
+    entry_x_values_frame = tk.Frame(interpolacion_frame, bg="green")
+    lb_insert_x_values = tk.Label(entry_x_values_frame, text='Inserte los valores de X (separados por comas):', font=('Arial', 12), bg='green')
     lb_insert_x_values.pack(side=tk.LEFT, padx=5)
     entry_x_values = tk.Entry(entry_x_values_frame, font=('Arial', 12), width=60)
     entry_x_values.pack(side=tk.LEFT)
     entry_x_values_frame.pack(pady=5)
 
-    entry_y_values_frame = tk.Frame(interpolacion_frame, bg="light cyan")
-    lb_insert_y_values = tk.Label(entry_y_values_frame, text='Inserte los valores de Y (separados por comas):', font=('Arial', 12), bg='light cyan')
+    entry_y_values_frame = tk.Frame(interpolacion_frame, bg="green")
+    lb_insert_y_values = tk.Label(entry_y_values_frame, text='Inserte los valores de Y (separados por comas):', font=('Arial', 12), bg='green')
     lb_insert_y_values.pack(side=tk.LEFT, padx=5)
     entry_y_values = tk.Entry(entry_y_values_frame, font=('Arial', 12), width=60)
     entry_y_values.pack(side=tk.LEFT)
     entry_y_values_frame.pack(pady=5)
 
-    entry_valor_interpolar_frame = tk.Frame(interpolacion_frame, bg="light cyan")
-    lb_insert_valor_interpolar = tk.Label(entry_valor_interpolar_frame, text='Inserte el valor a interpolar:', font=('Arial', 12), bg='light cyan')
+    entry_valor_interpolar_frame = tk.Frame(interpolacion_frame, bg="green")
+    lb_insert_valor_interpolar = tk.Label(entry_valor_interpolar_frame, text='Inserte el valor a interpolar:', font=('Arial', 12), bg='green')
     lb_insert_valor_interpolar.pack(side=tk.LEFT, padx=5)
     entry_valor_interpolar = tk.Entry(entry_valor_interpolar_frame, font=('Arial', 12), width=30)
     entry_valor_interpolar.pack(side=tk.LEFT)
     entry_valor_interpolar_frame.pack(pady=5)
 
-    methods_frame = tk.Frame(interpolacion_frame, bg="light cyan")
-    pols_btn = tk.Button(methods_frame, text="Pol Simple", font=('Bold', 12), fg='blue4', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_interpolacion(p_simple))
+    methods_frame = tk.Frame(interpolacion_frame, bg="green")
+    pols_btn = tk.Button(methods_frame, text="Pol Simple", font=('Bold', 12), fg='green', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_interpolacion(p_simple))
     pols_btn.pack(side=tk.LEFT, padx=5)
-    lagrange_btn = tk.Button(methods_frame, text="Lagrange", font=('Bold', 12), fg='blue4', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_interpolacion(lagrange))
+    lagrange_btn = tk.Button(methods_frame, text="Lagrange", font=('Bold', 12), fg='green', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_interpolacion(lagrange))
     lagrange_btn.pack(side=tk.LEFT, padx=5)
-    min_cuadrados_btn = tk.Button(methods_frame, text="Mínimos Cuadrados", font=('Bold', 12), fg='blue4', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_interpolacion(mc))
+    min_cuadrados_btn = tk.Button(methods_frame, text="Mínimos Cuadrados", font=('Bold', 12), fg='green', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_interpolacion(mc))
     min_cuadrados_btn.pack(side=tk.LEFT, padx=5)
     methods_frame.pack(pady=10)
 
     # Crear la sección de soluciones pero no mostrarla inicialmente
-    solution_interpolacion_frame = tk.Frame(interpolacion_frame, bg="light cyan")
-    lb_solution = tk.Label(solution_interpolacion_frame, text='Solución', font=('Bold', 30), bg='Light cyan', fg='red')
+    solution_interpolacion_frame = tk.Frame(interpolacion_frame, bg="green")
+    lb_solution = tk.Label(solution_interpolacion_frame, text='Solución', font=('Bold', 30), bg='green', fg='white')
     lb_solution.pack()
-    lb_enunciado_solution = tk.Label(solution_interpolacion_frame, text='El valor interpolado es:', font=('Arial', 12), bg='Light cyan')
+    lb_enunciado_solution = tk.Label(solution_interpolacion_frame, text='El valor interpolado es:', font=('Arial', 12), bg='green', fg = "white")
     lb_enunciado_solution.pack(pady=10)
-    entry_solution_frame = tk.Frame(solution_interpolacion_frame, bg='light cyan')
+    entry_solution_frame = tk.Frame(solution_interpolacion_frame, bg='green')
     entry_solution_interpolacion = tk.Entry(entry_solution_frame, font=('Arial', 12), width=60)
     entry_solution_interpolacion.pack(side=tk.LEFT)
     entry_solution_frame.pack(pady=5)
     
-    lb_ecuacion_minimos_cuadrados = tk.Label(solution_interpolacion_frame, text='Ecuación de la recta de mejor ajuste (si aplica):', font=('Arial', 12), bg='Light cyan')
+    lb_ecuacion_minimos_cuadrados = tk.Label(solution_interpolacion_frame, text='Ecuación de la recta de mejor ajuste (si aplica):', font=('Arial', 12), bg='green')
     lb_ecuacion_minimos_cuadrados.pack(pady=10)
-    entry_ecuacion_frame = tk.Frame(solution_interpolacion_frame, bg='light cyan')
+    entry_ecuacion_frame = tk.Frame(solution_interpolacion_frame, bg='green')
     entry_ecuacion_minimos_cuadrados = tk.Entry(entry_ecuacion_frame, font=('Arial', 12), width=60)
     entry_ecuacion_minimos_cuadrados.pack(side=tk.LEFT)
     entry_ecuacion_frame.pack(pady=5)
@@ -393,63 +402,63 @@ def ecuaciones_diferenciales_page():
 
     global entry_funcion_diferencial, entry_x0_dif, entry_y0_dif, entry_h, entry_n, entry_solution_ecuaciones_diferenciales
     
-    ecuaciones_diferenciales_frame = tk.Frame(main_frame, bg="light cyan")
+    ecuaciones_diferenciales_frame = tk.Frame(main_frame, bg="green")
     ecuaciones_diferenciales_frame.pack(expand=True, fill=tk.BOTH, pady=20)
     
-    lb = tk.Label(ecuaciones_diferenciales_frame, text='Ecuaciones Diferenciales', font=('Bold', 40), bg='Light cyan')
+    lb = tk.Label(ecuaciones_diferenciales_frame, text='Ecuaciones Diferenciales', font=('Bold', 40), bg='green', fg=   'white')
     lb.pack(pady=10)
     
-    lb1 = tk.Label(ecuaciones_diferenciales_frame, text='Resolución de ecuaciones diferenciales utilizando diferentes métodos numéricos.', font=('Arial', 12), bg='Light cyan')
+    lb1 = tk.Label(ecuaciones_diferenciales_frame, text='Resolución de ecuaciones diferenciales utilizando diferentes métodos numéricos.', font=('Arial', 12), bg='green', fg='white')
     lb1.pack(pady=10)
     
-    entry_funcion_diferencial_frame = tk.Frame(ecuaciones_diferenciales_frame, bg="light cyan")
-    lb_insert_funcion = tk.Label(entry_funcion_diferencial_frame, text='Inserte la ecuación diferencial:', font=('Arial', 12), bg='light cyan')
+    entry_funcion_diferencial_frame = tk.Frame(ecuaciones_diferenciales_frame, bg="green")
+    lb_insert_funcion = tk.Label(entry_funcion_diferencial_frame, text='Inserte la ecuación diferencial:', font=('Arial', 12), bg='green')
     lb_insert_funcion.pack(side=tk.LEFT, padx=5)
     entry_funcion_diferencial = tk.Entry(entry_funcion_diferencial_frame, font=('Arial', 12), width=60)
     entry_funcion_diferencial.pack(side=tk.LEFT)
     entry_funcion_diferencial_frame.pack(pady=5)
 
-    entry_x0_frame_dif = tk.Frame(ecuaciones_diferenciales_frame, bg="light cyan")
-    lb_insert_x0 = tk.Label(entry_x0_frame_dif, text='Inserte el valor de x0:', font=('Arial', 12), bg='light cyan')
+    entry_x0_frame_dif = tk.Frame(ecuaciones_diferenciales_frame, bg="green")
+    lb_insert_x0 = tk.Label(entry_x0_frame_dif, text='Inserte el valor de x0:', font=('Arial', 12), bg='green')
     lb_insert_x0.pack(side=tk.LEFT, padx=5)
     entry_x0_dif = tk.Entry(entry_x0_frame_dif, font=('Arial', 12), width=30)
     entry_x0_dif.pack(side=tk.LEFT)
     entry_x0_frame_dif.pack(pady=5)
 
-    entry_y0_frame_dif = tk.Frame(ecuaciones_diferenciales_frame, bg="light cyan")
-    lb_insert_y0 = tk.Label(entry_y0_frame_dif, text='Inserte el valor de y0:', font=('Arial', 12), bg='light cyan')
+    entry_y0_frame_dif = tk.Frame(ecuaciones_diferenciales_frame, bg="green")
+    lb_insert_y0 = tk.Label(entry_y0_frame_dif, text='Inserte el valor de y0:', font=('Arial', 12), bg='green')
     lb_insert_y0.pack(side=tk.LEFT, padx=5)
     entry_y0_dif = tk.Entry(entry_y0_frame_dif, font=('Arial', 12), width=30)
     entry_y0_dif.pack(side=tk.LEFT)
     entry_y0_frame_dif.pack(pady=5)
 
-    entry_h_frame = tk.Frame(ecuaciones_diferenciales_frame, bg="light cyan")
-    lb_insert_h = tk.Label(entry_h_frame, text='Inserte el valor de h (paso):', font=('Arial', 12), bg='light cyan')
+    entry_h_frame = tk.Frame(ecuaciones_diferenciales_frame, bg="green")
+    lb_insert_h = tk.Label(entry_h_frame, text='Inserte el valor de h (paso):', font=('Arial', 12), bg='green')
     lb_insert_h.pack(side=tk.LEFT, padx=5)
     entry_h = tk.Entry(entry_h_frame, font=('Arial', 12), width=30)
     entry_h.pack(side=tk.LEFT)
     entry_h_frame.pack(pady=5)
 
-    entry_n_frame = tk.Frame(ecuaciones_diferenciales_frame, bg="light cyan")
-    lb_insert_n = tk.Label(entry_n_frame, text='Inserte el número de pasos:', font=('Arial', 12), bg='light cyan')
+    entry_n_frame = tk.Frame(ecuaciones_diferenciales_frame, bg="green")
+    lb_insert_n = tk.Label(entry_n_frame, text='Inserte el número de pasos:', font=('Arial', 12), bg='green')
     lb_insert_n.pack(side=tk.LEFT, padx=5)
     entry_n = tk.Entry(entry_n_frame, font=('Arial', 12), width=30)
     entry_n.pack(side=tk.LEFT)
     entry_n_frame.pack(pady=5)
 
-    methods_frame = tk.Frame(ecuaciones_diferenciales_frame, bg="light cyan")
-    euler_btn = tk.Button(methods_frame, text="Euler", font=('Bold', 12), fg='blue4', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_ecuaciones_diferenciales(Euler))
+    methods_frame = tk.Frame(ecuaciones_diferenciales_frame, bg="green")
+    euler_btn = tk.Button(methods_frame, text="Euler", font=('Bold', 12), fg='green', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_ecuaciones_diferenciales(Euler))
     euler_btn.pack(side=tk.LEFT, padx=5)
-    rk4_btn = tk.Button(methods_frame, text="Runge-Kutta 4", font=('Bold', 12), fg='blue4', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_ecuaciones_diferenciales(Runge4))
+    rk4_btn = tk.Button(methods_frame, text="Runge-Kutta 4", font=('Bold', 12), fg='green', bd=5, bg='#c3c3c3', command=lambda: obtener_datos_ecuaciones_diferenciales(Runge4))
     rk4_btn.pack(side=tk.LEFT, padx=5)
     methods_frame.pack(pady=10)
 
-    solution_ecuaciones_diferenciales_frame = tk.Frame(ecuaciones_diferenciales_frame, bg="light cyan")
-    lb_solution = tk.Label(solution_ecuaciones_diferenciales_frame, text='Solución', font=('Bold', 30), bg='Light cyan', fg='red')
+    solution_ecuaciones_diferenciales_frame = tk.Frame(ecuaciones_diferenciales_frame, bg="green")
+    lb_solution = tk.Label(solution_ecuaciones_diferenciales_frame, text='Solución', font=('Bold', 30), bg='green', fg='white')
     lb_solution.pack()
-    lb_enunciado_solution = tk.Label(solution_ecuaciones_diferenciales_frame, text='Los valores de la solución son:', font=('Arial', 12), bg='Light cyan')
+    lb_enunciado_solution = tk.Label(solution_ecuaciones_diferenciales_frame, text='Los valores de la solución son:', font=('Arial', 12), bg='green')
     lb_enunciado_solution.pack(pady=10)
-    entry_solution_frame = tk.Frame(solution_ecuaciones_diferenciales_frame, bg='light cyan')
+    entry_solution_frame = tk.Frame(solution_ecuaciones_diferenciales_frame, bg='green')
     entry_solution_ecuaciones_diferenciales = tk.Entry(entry_solution_frame, font=('Arial', 12), width=60)
     entry_solution_ecuaciones_diferenciales.pack(side=tk.LEFT)
     entry_solution_frame.pack(pady=5)
